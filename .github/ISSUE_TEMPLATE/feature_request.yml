@@ -1,0 +1,33 @@
+name: Feature or change
+description: Propose an improvement to the importer, schema, search API or documentation.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Changes to import rules, thresholds, matching or field ownership protect real school records, so we agree the approach here before anyone writes code.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What's hard or impossible today, and who is affected?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: What should happen instead? Mention the files or functions you expect to change.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Effect on existing deployments
+      description: Would existing databases need a migration? Could an import change, insert or protect different records?
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution
+      options:
+        - label: I'd like to work on this myself.

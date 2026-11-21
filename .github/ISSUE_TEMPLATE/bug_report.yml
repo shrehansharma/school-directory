@@ -1,0 +1,51 @@
+name: Bug report
+description: The importer, SQL or search API doesn't behave as documented.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Use **fictional** schools and data only: never paste DBE spreadsheet rows, production records, connection strings or anyone's personal information. Report security problems privately (see SECURITY.md), not here.
+        Is a school's name or location wrong? Use the **School-data correction** form instead.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Importer (school_directory.py)
+        - SQL schema or functions
+        - Search API handler or Supabase adapter
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you see, and what did you expect instead? Include the exit code and the error line if there was one.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Ideally a failing test, or fictional rows that reproduce it.
+      placeholder: |
+        1. Build a CSV with these fictional headers and rows ...
+        2. Run python school_directory.py --file ...
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Release or commit
+      placeholder: v0.1.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Python, PostgreSQL and Node.js versions
+      placeholder: Python 3.13, PostgreSQL 17
